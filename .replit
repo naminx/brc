@@ -1,0 +1,25 @@
+run = "bash"
+
+git = "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"
+
+entrypoint = "Main.hs"
+
+hidden = [ ]
+
+[nix]
+channel = "unstable"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".ghci"]
+
+[languages]
+
+[languages.haskell]
+pattern = "**/*.hs"
+
+[languages.haskell.languageServer]
+start = "haskell-language-server --lsp"
+
+[env]
+CABAL_DIR = "/home/runner/$REPL_SLUG/.config/cabal"
+CABAL_CONFIG = "/home/runner/$REPL_SLUG/.config/cabal/config"
