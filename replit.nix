@@ -18,6 +18,8 @@ in {
     unzip
     zip
     starship
+    lsd
+    bat
     # Haskell
     cabal-install
     haskell-language-server

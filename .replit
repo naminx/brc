@@ -3,8 +3,7 @@ run = "bash"
 git = "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"
 
 entrypoint = "Main.hs"
-
-hidden = [ ]
+hidden = [".ghci", "ghci_wrapper.sh"]
 
 [nix]
 channel = "unstable"
