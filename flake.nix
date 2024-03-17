@@ -18,7 +18,7 @@
         config,
         pkgs,
         ...
-      }: rec {
+      }: {
         packages.default = self'.packages.brc;
         haskellProjects.default = {
           # basePackages = pkgs.haskellPackages;
@@ -26,7 +26,6 @@
           # Packages to add on top of `basePackages`, e.g. from Hackage
           packages = {
             # aeson.source = "1.5.0.0" # Hackage version
-            brc.root = ./.; # Assumes ./brc.cabal
           };
 
           # my-haskell-package development shell configuration
