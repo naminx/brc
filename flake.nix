@@ -11,17 +11,14 @@
 
   outputs = inputs @ {nixpkgs, ...}:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = [ "x86_64-linux" ];
-      # systems = nixpkgs.lib.systems.flakeExposed;
+      systems = nixpkgs.lib.systems.flakeExposed;
       imports = [inputs.haskell-flake.flakeModule];
       perSystem = {
         self',
-        system,
-        lib,
         config,
         pkgs,
         ...
-      }: {
+      }: rec {
         packages.default = self'.packages.brc;
         haskellProjects.default = {
           # basePackages = pkgs.haskellPackages;
@@ -29,6 +26,7 @@
           # Packages to add on top of `basePackages`, e.g. from Hackage
           packages = {
             # aeson.source = "1.5.0.0" # Hackage version
+            brc.root = ./.; # Assumes ./brc.cabal
           };
 
           # my-haskell-package development shell configuration
