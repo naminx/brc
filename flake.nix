@@ -11,7 +11,7 @@
 
   outputs = inputs @ {nixpkgs, ...}:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = nixpkgs.lib.systems.flakeExposed;
+      systems = [ "x86_64-linux" ];
       imports = [inputs.haskell-flake.flakeModule];
       perSystem = {
         self',
