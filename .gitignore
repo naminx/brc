@@ -21,5 +21,7 @@ cabal-dev
 cabal.project.local
 cabal.project.local~
 cabal.sandbox.config
+dev-profile*
 dist
 dist-*
+result

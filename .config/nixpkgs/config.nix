@@ -2,6 +2,7 @@
   allowBroken = true;
   allowUnfree = true;
   time.timeZone = "Asia/Bangkok";
+  settings.experimental-features = [ "nix-command" "flakes" "read-only-local-store" "local-overlay-store" ];
   packageOverrides = pkgs: {
     neovim =
       pkgs.neovim.override

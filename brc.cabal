@@ -90,7 +90,6 @@ executable brc
                  ,    filepath
                  ,    formatting
                  ,    lens
-                 ,    linear-base
                  ,    megaparsec
                  ,    non-empty-text
                  ,    optparse-applicative
@@ -106,7 +105,6 @@ executable brc
                  ,    string-conversions
                  ,    text
                  ,    text-builder
-                 ,    text-builder-linear
 
     -- Directories containing source files.
     hs-source-dirs:   src

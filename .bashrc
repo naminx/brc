@@ -6,35 +6,21 @@ esac
 
 # Commands to run in interactive sessions can go here
 alias cat='bat'
-alias cd=z
-alias cp=copy
-alias del='rip'
-alias dir='lsd -lF --color=auto --icon=never'
+alias cd='z'
+alias copy='command cp -i'
+alias cp='command cp -i'
+alias del='command rm -i'
+alias dir='eza -l'
 alias fe='vi (fzf --ansi --color=16)'
-alias find=fd
 alias fzf='fzf --ansi --color=16'
-alias grep=rg
-alias ls='lsd -F --color=auto --icon=never'
+alias ls='eza'
 alias md='mkdir'
-alias mv=move
-alias rd='rip'
-alias ren=move
-alias rm='rip'
-alias rmdir='rip'
-
-copy () {
-    if [ -f "${@: -1}" -o -L "${@: -1}" ]; then
-        rip "${@: -1}"
-    fi
-    command cp "$@"
-}
-
-move () {
-    if [ -f "${@: -1}" -o -L "${@: -1}" ]; then
-        rip "${@: -1}"
-    fi
-    command mv "$@"
-}
+alias move='command mv -i'
+alias mv='command mv -i'
+alias rd='rmdir'
+alias ren='command mv -i'
+alias rm='command rm -i'
+alias rmdir='rmdir -i'
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"

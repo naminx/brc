@@ -2,12 +2,14 @@
   myHaskellPackages = pkgs.haskellPackages.override {
     overrides = self: super:
       with pkgs.haskell.lib; {
-        #       script-monad = dontCheck super.script-monad;
-        #       webdriver-w3c = dontCheck super.webdriver-w3c;
+        # script-monad = dontCheck super.script-monad;
+        # webdriver-w3c = dontCheck super.webdriver-w3c;
       };
   };
 in {
   deps = with pkgs; [
+    cachix
+    nix-index
     alejandra
     fish
     less
@@ -19,6 +21,7 @@ in {
     zip
     starship
     lsd # better ls
+    eza # better ls alternative
     bat # better cat
     fcp # better cp
     fd # better find
@@ -26,6 +29,8 @@ in {
     ripgrep # better grep
     zoxide # better cd
     fzf # file browser
+    bottom # better top
+    htop-vim # betton top
     # chromium
     # Haskell
     cabal-install
